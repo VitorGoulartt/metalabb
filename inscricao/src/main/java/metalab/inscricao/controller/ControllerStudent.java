@@ -45,9 +45,9 @@ public class ControllerStudent {
         List<StudentDTO> student = serviceStudent.StudentByFilter(circulo, turno, local);
         return ResponseEntity.ok(student);
     }
-    @GetMapping("/{idFathers}")
-    public ResponseEntity<List<StudentDTO>> StudentUnderage(@PathVariable int idFathers{
-        List<StudentDTO> student = serviceStudent.StudentFathers(idFathers);
+    @GetMapping("/father/{id}")
+    public ResponseEntity<List<StudentDTO>> StudentUnderage(@PathVariable int id){
+        List<StudentDTO> student = serviceStudent.StudentFathers(id);
         return ResponseEntity.ok(student);
 
     })

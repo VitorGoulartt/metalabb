@@ -2,7 +2,6 @@ package metalab.inscricao.controller;
 
 import java.util.List;
 
-import org.hibernate.query.results.internal.complete.ModelPartReferenceBasic;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
