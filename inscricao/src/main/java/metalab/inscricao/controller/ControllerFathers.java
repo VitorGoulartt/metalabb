@@ -18,14 +18,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class ControllerFathers {
 
     @GetMapping
-    public ResponseEntity<List<FatherDTO>> listFathers(){
-        List<FatherDTO> fathers = serviceFather.listFathers();
+    public ResponseEntity<List<Fathe>> listFathers(){
+        List<Fathe> fathers = serviceFather.listFathers();
         return ResponseEntity.ok(fathers);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<FatherDTO> listFathersById(@PathVariable int id){
-        FatherDTO father = serviceFather.listFathersById(id);
+    public ResponseEntity<Fathe> listFathersById(@PathVariable int id){
+        Fathe father = serviceFather.listFathersById(id);
         if( father != null){
             return ResponseEntity.ok(father);
         }
@@ -34,8 +34,8 @@ public class ControllerFathers {
     }
 
     @GetMapping ("/student/{id}")
-     public ResponseEntity<FatherDTO> listFathersByStudentId(@PathVariable int id){
-        FatherDTO father = serviceFather.listFathersByStudentId(id);
+     public ResponseEntity<Fathe> listFathersByStudentId(@PathVariable int id){
+        Fathe father = serviceFather.listFathersByStudentId(id);
         if( father != null){
             return ResponseEntity.ok(father);
         }
