@@ -1,5 +1,9 @@
 package metalab.inscricao.repository;
 
-public class RepositoryFather {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface RepositoryFather extends JpaRepository<ModelFather, Integer> {
 
 }
