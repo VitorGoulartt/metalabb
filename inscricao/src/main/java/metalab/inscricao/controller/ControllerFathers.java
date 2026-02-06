@@ -2,6 +2,7 @@ package metalab.inscricao.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,20 +13,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import metalab.inscricao.dtos.FatherDTO;
+import metalab.inscricao.model.ModelFather;
+import metalab.inscricao.service.ServiceFathers;
+
 @RestController
 @RequestMapping("metalab/pais")
 @CrossOrigin
 public class ControllerFathers {
 
+    @Autowired
+    private ServiceFathers serviceFather;
+
     @GetMapping
-    public ResponseEntity<List<Fathe>> listFathers(){
-        List<Fathe> fathers = serviceFather.listFathers();
+    public ResponseEntity<List<FatherDTO>> listFathers(){
+        List<FatherDTO> fathers = serviceFather.listFathers();
         return ResponseEntity.ok(fathers);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Fathe> listFathersById(@PathVariable int id){
-        Fathe father = serviceFather.listFathersById(id);
+    public ResponseEntity<FatherDTO> listFathersById(@PathVariable int id){
+        FatherDTO father = serviceFather.listFathersById(id);
         if( father != null){
             return ResponseEntity.ok(father);
         }
@@ -34,8 +42,8 @@ public class ControllerFathers {
     }
 
     @GetMapping ("/student/{id}")
-     public ResponseEntity<Fathe> listFathersByStudentId(@PathVariable int id){
-        Fathe father = serviceFather.listFathersByStudentId(id);
+     public ResponseEntity<FatherDTO> listFathersByStudentId(@PathVariable int id){
+        FatherDTO father = serviceFather.listFathersByStudentId(id);
         if( father != null){
             return ResponseEntity.ok(father);
         }

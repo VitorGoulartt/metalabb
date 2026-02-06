@@ -1,4 +1,4 @@
-package metalab.inscricao.Model;
+package metalab.inscricao.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,5 +28,7 @@ public class ModelFather {
     private String rg;
     private String telefone;
     private String email;
+
+    private ModelStudent student;
 
 }
